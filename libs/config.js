@@ -1,7 +1,7 @@
 module.exports = {
-    database: "api_v3_production",
-    username: "root",
-    password: "ZAMcry189",
+    database: "mydb",
+    username: "myuser",
+    password: "mypass",
     params: {
         define: {
             underscored: true,
