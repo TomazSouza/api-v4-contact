@@ -25,7 +25,7 @@ module.exports = (app) => {
             config.username,
             config.password, {
                 host: "localhost",
-                dialect: "mysql",
+                dialect: "postgres",
                 operatorsAliases,
             }
         );
