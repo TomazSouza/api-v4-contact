@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Portal de notícias</title>
+    <!-- bootstrap - link cdn -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/firebase/notification" method="post">
+            <div class="form-group">
+              <label for="token_notification">Firebase token:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="token_notification"
+                name="token_notification"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="pwd">Channel Id Android:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="channel_id"
+                name="channel_id"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">Mensagem:</label>
+                <textarea class="form-control" id="message" name="message" required></textarea>
+              </div>
+
+            <button type="submit" class="btn btn-default">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

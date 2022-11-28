@@ -1,0 +1,280 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "API de Agenda de Contatos",
+        "description": "Api de Agenda de contatos",
+        "termsOfService": "http://localhost:8080/terms",
+        "conctact": {
+            "email": "email@mail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080/v1",
+            "description": "API de test"
+        }
+    ],
+    "paths": {
+        "/user/create": {
+            "post": {
+                "summary": "Create user",
+                "description": "Essa rota é responsável por cadastrar um novo usuário",
+                "tags": ["User"],
+                "security": [{"bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    },
+                    "examples": {
+                        "user": {
+                            "value": {
+                                "name": "Novo nome",
+                                "email": "email@email.com",
+                                "password": "1234"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Email inválido",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "206": {
+                        "description": "E-mail já foi cadastrado!",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created user success",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/login": {
+            "post": {
+                "summary": "Sign In",
+                "description": "Essa rota é responsável por realizar login",
+                "tags": ["User"],
+                "security": [{"bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    },
+                    "examples": {
+                        "user": {
+                            "value": {
+                                "email": "email@email.com",
+                                "password": "1234"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Email inválido",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "206": {
+                        "description": "E-mail já foi cadastrado!",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created user success",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/user/info": {
+            "get": {
+                "summary": "Ger user info",
+                "description": "Essa rota é responsável por realizar login",
+                "tags": ["User"],
+                "security": [{"bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    },
+                    "examples": {
+                        "user": {
+                            "value": {
+                                "email": "email@email.com",
+                                "password": "1234"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Email inválido",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "206": {
+                        "description": "E-mail já foi cadastrado!",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Created user success",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/BaseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/contact/create": {
+            "get": {
+                "summary": "Create contact",
+                "description": "Essa rota é responsável por criar o contato",
+                "tags": ["Contact"],
+                "security": [{"bearerAuth": [] }]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Contact": {
+                "type": "object",
+                "properties": {
+                    "contact_id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "phone"
+                ]
+            },
+            "BaseResponse": {
+                "type": "object",
+                "properties": {
+                    "status_code": {
+                        "type": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "is_error": {
+                        "type": "boolean"
+                    },
+                    "data": {
+                       "token": "string"
+                    },
+                    "params_validation": {
+                        "token": "string"
+                    }
+                }
+            }
+        }
+    }
+}

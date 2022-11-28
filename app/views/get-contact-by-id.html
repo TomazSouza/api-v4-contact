@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Buscar contato por id</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <li>Enviar no Header para autenticação</li>
+        </br>
+        <li>x-access-token:"token"</li>
+        <img src="images/postman.png" />
+        <br></br>
+        <li>Método GET {base_url}/contact/{contact_id}</li>
+        <div class="col-md-auto">
+            <pre>
+        <li>Sucesso</li>
+        <code>
+            {
+                "status_code": 201,
+                "message": "Contato obtido com sucesso!",
+                "is_error": false,
+                "data": [
+                    {
+                        "contact_id": 0,
+                        "name": "Meu contato 43",
+                        "email": "meu41@email.com",
+                        "address": "meu endereço rr",
+                        "phone": "12345676",
+                        "createdAt": "2021-10-29T01:41:44.000Z",
+                        "updatedAt": "2021-10-29T01:41:44.000Z",
+                        "user_id": 2,
+                        "image": "http://tmsolucaotecnologia.dev.br/image/profile_placeholder.png"
+                    }
+                ]
+            }
+        </code>
+    </pre>
+        </div>
+        <div class="col-md-auto">
+            <pre>
+        <li>Falha</li>
+        <code>
+            {
+                status_code: 202,
+                message: "Contato não encontrado",
+                is_error: false,
+                data: [],
+                params_validation: [],
+              }
+        </code>
+    </pre>
+        </div>
+        <div class="col-md-auto">
+            <pre>
+        <li>Parâmetro contact_id vazio ou nulo</li>
+        <code>
+            {
+                status_code: 203,
+                message: "Parâmetro não foi preenchido",
+                is_error: true,
+                data: [],
+                params_validation: [{
+                  msg: "Parâmetro é obrigatório",
+                  param: 'contact_id'
+                }],
+            }
+        </code>
+    </pre>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

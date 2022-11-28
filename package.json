@@ -1,0 +1,45 @@
+{
+    "name": "api-v2-student",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon ./index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.18.3",
+        "compression": "^1.7.4",
+        "consign": "^0.1.6",
+        "cors": "^2.8.5",
+        "ejs": "^3.1.6",
+        "express": "^4.16.4",
+        "express-session": "^1.17.2",
+        "express-validator": "^5.3.1",
+        "firebase-admin": "^10.0.0",
+        "helmet": "^3.16.0",
+        "jsonwebtoken": "^8.5.1",
+        "mysql": "^2.16.0",
+        "mysql2": "^1.6.4",
+        "normalize-port": "^1.0.0",
+        "passport": "^0.4.0",
+        "passport-jwt": "^4.0.0",
+        "sequelize": "^4.42.0",
+        "socket.io": "^4.3.1",
+        "swagger-jsdoc": "^4.0.0",
+        "swagger-ui-express": "^4.4.0"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.0.5",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-es2015": "^6.24.1",
+        "nodemon": "^2.0.7",
+        "swagger-autogen": "^2.21.3"
+    }
+}
