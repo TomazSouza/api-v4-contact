@@ -6,8 +6,8 @@ const app = require("./libs/server");
 // const { Server } = require("socket.io");
 
 const port = 8080;
-const host = process.env.host || "127.0.0.1";
-//const host = "67.205.186.154";
+//const host = process.env.host || "127.0.0.1";
+const host = "146.190.48.225";
 
 const server = http.createServer(app);
 
